@@ -4,7 +4,13 @@ appears near the deer with a short, encouraging message (e.g., “Great job!”,
 my workflow: create a floating speech bubble element in newTab.html -> style it in styles.css -> trigger it in newTab.js 
 whenever a task is completed (inside your checkbox .addEventListener("change", ...) logic) -> randomly select a positive message
 
+Challenges: initially, the encouragement bubble didn't appear due to a missing HTML element. debugging showed that the 
+#encouragement-bubble div wasn't included in the newTab.html. Once added, and after verifying the CSS and JS animation logic, 
+the feature worked.
+
 Mood Selection Prompt: Implement a simple mood selection feature(e.g., happy, stressed, neutral) with a small icon or 
 emoji. This allows users to log their emotional state quickly each day.
+
+my workflow:
 
 Challenges:
