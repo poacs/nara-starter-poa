@@ -1,0 +1,10 @@
+Speech Bubble Encouragement: Implement a feature where, whenever the user checks off a task, a speech or thought bubble 
+appears near the deer with a short, encouraging message (e.g., “Great job!”, “You’re making progress!”, “Keep going!”).
+
+my workflow: create a floating speech bubble element in newTab.html -> style it in styles.css -> trigger it in newTab.js 
+whenever a task is completed (inside your checkbox .addEventListener("change", ...) logic) -> randomly select a positive message
+
+Mood Selection Prompt: Implement a simple mood selection feature(e.g., happy, stressed, neutral) with a small icon or 
+emoji. This allows users to log their emotional state quickly each day.
+
+Challenges:

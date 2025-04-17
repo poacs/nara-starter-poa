@@ -488,3 +488,44 @@ input[type="checkbox"]:checked+.task-text {
     opacity: 0.95;
     animation: welcomeFadeIn 1s ease-out forwards;
     }
+
+#encouragement-bubble {
+    position: fixed;
+    bottom: 100px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: rgba(255, 255, 255, 0.95);
+    padding: 12px 20px;
+    border-radius: 20px;
+    box-shadow: 0 4px 12px rgb(220, 136, 232);
+    font-size: 1.2rem;
+    font-weight: 500;
+    color: #6d0075;
+    opacity: 0;
+    pointer-events: none;
+    z-index: 1000;
+    transition: opacity 0.3s ease-out;
+    }
+      
+#encouragement-bubble.show {
+    animation: floatUpFade 2s ease-out forwards;
+    }
+      
+@keyframes floatUpFade {
+    0% {
+        opacity: 0;
+        transform: translate(-50%, 0);
+    }
+    10% {
+        opacity: 1;
+        transform: translate(-50%, -10px);
+        }
+    90% {
+        opacity: 1;
+        transform: translate(-50%, -20px);
+        }
+    100% {
+        opacity: 0;
+        transform: translate(-50%, -30px);
+    }
+    }      

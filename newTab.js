@@ -670,6 +670,29 @@ document.addEventListener("DOMContentLoaded", () => {
         const originalIndex = tasks.indexOf(task);
         tasks[originalIndex].completed = checkbox.checked;
 
+        if (checkbox.checked) {
+          const encouragements = [
+            "Your resiliance is inspiring. Keep it up!",
+            "You’re making progress!",
+            "Way to go!",
+            "You’re crushing it!",
+            "Sublime!",
+            "Reach for the stars!",
+            "The sky is the limit.",
+            "Believe you can.",
+            "You’re doing excellent!",
+            "You did it!"
+          ];
+
+          const bubble = document.getElementById("encouragement-bubble");
+          bubble.textContent = encouragements[Math.floor(Math.random() * encouragements.length)];
+
+          // reset animation (in case bubble is clicked rapidly)
+          bubble.classList.remove("show");
+          void bubble.offsetWidth; // force reflow to restart animation
+          bubble.classList.add("show");
+        }        
+
         if (tasks[originalIndex].completed) {
           const deleteButton = taskItem.querySelector(".delete-task");
           if (deleteButton) deleteButton.remove();
