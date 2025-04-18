@@ -14,7 +14,20 @@
   </head>
   <body>
     <h1 id="welcome-message">Who do you want to care for today?</h1>
-
+    <div id="mood-tracker">
+      <span>How are you feeling today?</span>
+      <div id="mood-options">
+        <button class="mood-btn" data-mood="energetic" title="engergetic">🤩</button>
+        <button class="mood-btn" data-mood="happy" title="happy">😊</button>
+        <button class="mood-btn" data-mood="grateful" title="grateful">😌</button>
+        <button class="mood-btn" data-mood="neutral" title="neutral">😐</button>
+        <button class="mood-btn" data-mood="anxious" title="anxious">😰</button>
+        <button class="mood-btn" data-mood="somber" title="somber">😢</button>
+        <button class="mood-btn" data-mood="irritation" title="irritation">😡</button>
+      </div>
+      <div id="selected-mood" class="hidden">You selected: <span id="mood-icon"></span></div>
+    </div>
+    
     <!-- 
   <div id="deer1-circle" class="deer-circle"></div>
   <div id="deer2-circle" class="deer-circle"></div>

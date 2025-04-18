@@ -1,4 +1,33 @@
 document.addEventListener("DOMContentLoaded", () => {
+  const moodBtns = document.querySelectorAll(".mood-btn");
+  const selectedMoodDiv = document.getElementById("selected-mood");
+  const moodIconSpan = document.getElementById("mood-icon");
+
+  // load saved mood for today
+  const today = new Date().toISOString().split("T")[0];
+  chrome.storage.local.get(["moodLog"], (data) => {
+    const moodLog = data.moodLog || {};
+    if (moodLog[today]) {
+      selectedMoodDiv.classList.remove("hidden");
+      moodIconSpan.textContent = moodLog[today];
+    }
+  });
+
+  // mood selection handler
+  moodBtns.forEach((btn) => {
+    btn.addEventListener("click", () => {
+      const mood = btn.textContent;
+      chrome.storage.local.get(["moodLog"], (data) => {
+        const moodLog = data.moodLog || {};
+        moodLog[today] = mood;
+        chrome.storage.local.set({ moodLog }, () => {
+          selectedMoodDiv.classList.remove("hidden");
+          moodIconSpan.textContent = mood;
+        });
+      });
+    });
+  });
+
   const backgroundContainer = document.createElement("div");
   backgroundContainer.className = "background-container";
   document.body.appendChild(backgroundContainer);

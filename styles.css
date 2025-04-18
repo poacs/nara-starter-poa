@@ -529,3 +529,46 @@ input[type="checkbox"]:checked+.task-text {
         transform: translate(-50%, -30px);
     }
     }      
+    
+#mood-tracker {
+    position: fixed;
+    top: 20px;
+    right: 40px;
+    background: rgba(122, 215, 255, 0.969);
+    backdrop-filter: blur(10px);
+    border-radius: 20px;
+    padding: 10px 20px;
+    z-index: 1000;
+    font-size: 1rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 8px;
+    box-shadow: 0 4px 12px rgb(63, 133, 255);
+    }
+      
+#mood-options {
+    display: flex;
+    gap: 10px;
+    }
+      
+.mood-btn {
+    font-size: 1.6rem;
+    background: none;
+    border: none;
+    cursor: pointer;
+    transition: transform 0.2s;
+}
+      
+.mood-btn:hover {
+    transform: scale(1.2);
+}
+      
+#selected-mood {
+    font-size: 0.95rem;
+    color: #35028e;
+    }
+      
+.hidden {
+    display: none !important;
+    }      

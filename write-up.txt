@@ -11,6 +11,9 @@ the feature worked.
 Mood Selection Prompt: Implement a simple mood selection feature(e.g., happy, stressed, neutral) with a small icon or 
 emoji. This allows users to log their emotional state quickly each day.
 
-my workflow:
+my workflow: add mood tracker UI by creating a set of emoji buttons and storing the selected mood in chrome.storage.local with 
+current date as a key -> retrieve and display the mood when the user revisits the extension on the same day
 
-Challenges:
+Challenges: ensuring mood selections stayed the same across sessions. i had to correctly format the current date and use it as a
+unique key in the stored mood log. it also took trial and error to position the mood tracker in a way that didn’t overlap other UI 
+elements.
